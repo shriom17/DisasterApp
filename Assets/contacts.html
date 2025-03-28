@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <nav class="topnav">
+        <div class="leftnav">
+            <a href="index.html">Home</a>
+            <a href="dis.html">Disasters</a>
+            <a href="charity.html">Charity</a>
+            <a href="about.html">About</a>
+            <a href="contacts.html">Emergency Services</a>
+        </div>
+        <div class="rightnav">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <h1>Emergency Contacts</h1>
+
+    <div id="map" style="height: 400px; width: 100%; margin-bottom: 20px;"></div>
+
+    <div class="container">
+    
+        <div class="contact-list">
+            <h2>Police Stations</h2>
+            <ul id="police-stations">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+
+        <div class="contact-list">
+            <h2>Fire Brigades</h2>
+            <ul id="fire-brigades">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        <div class="contact-list">
+            <h2>Hospitals</h2>
+            <ul id="hospitals">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        <div class="contact-list">
+            <h2>Nursing Homes</h2>
+            <ul id="nursing-homes">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        
+
+    
+    <script src="contact.js"></script>
+    <footer>
+        <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

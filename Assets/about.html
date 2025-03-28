@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Flexbox for Sections */
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: rgb(16, 13, 59);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-content {
+      flex: 1 1 50%; /* Ensures equal size for content */
+    }
+
+    .section-image {
+      flex: 1 1 50%; /* Ensures equal size for images */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Footer Styles */
+   
+    
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="topnav">
+        <div class="leftnav">
+            <a href="index.html">Home</a>
+            <a href="dis.html">Disasters</a>
+            <a href="charity.html">Charity</a>
+            <a href="about.html">About</a>
+            <a href="contacts.html">Emergency Services</a>
+        </div>
+        <div class="rightnav">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- About Section -->
+    <div class="section">
+      <div class="section-content">
+        <h1>About</h1>
+        <p>This web page is very useful for centralized disaster management. The users connected with this page can get alerts for upcoming disasters. Not only that, the affected people can also apply for charities, and moreover, interested people can also join to provide charity to the needy through this website.</p>
+      </div>
+      <div class="section-image">
+        <img src="about.png" alt="About Us">
+      </div>
+    </div>
+
+    <!-- Goal & Mission Section -->
+    <div class="section">
+      <div class="section-content">
+        <h2>Goal & Mission</h2>
+        <p>Our motto is to respond to and recover people from natural disasters and to reduce the incidents of delayed aid and insufficient resource allocation with disaster prediction. In brief, our website minimizes the response time and maximizes resource allocation. With the modifications of advanced technology and AI, this website will be more effective for people to overcome the most crucial situations caused due to natural calamities.</p>
+      </div>
+      <div class="section-image">
+        <img src="goal.png" alt="Goal & Mission">
+      </div>
+    </div>
+
+    <!-- Join Us Section -->
+    <div class="section">
+      <div class="section-content">
+        <h2>Join Us</h2>
+        <p>We invite you to <a href="charity.html">join us</a> in our mission to make a safer and more resilient future. Whether you are a government agency, an emergency response organization, a non-government organization, a community leader, or an individual, we encourage you to step forward to join our charity forum in disaster management.</p>
+      </div>
+      <div class="section-image">
+        <img src="join.png" alt="Join Us">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

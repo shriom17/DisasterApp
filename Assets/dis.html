@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+    <title>Disaster Dashboard</title>
+    <style>
+        /* General Styles */
+
+        /* Disaster Section Styles */
+        .disaster-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+            justify-content: space-between;
+        }
+
+        .disaster-section {
+            flex: 1 1 calc(15% - 10px); /* Four sections side by side */
+            background-color: rgb(11, 13, 43);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .disaster-section video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .disaster-section h3 {
+            margin: 10px 0;
+            color: #f0e6e6;
+        }
+
+        .disaster-section ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .disaster-section ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* Form Section Styles */
+        .form-section {
+            background-color: rgb(6, 13, 51);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-section input, .form-section textarea, .form-section select, .form-section button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-section button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-section button:hover {
+            background-color: #575757;
+        }
+
+        /* Chart Section */
+        .dashboard-container {
+            margin: 20px 0;
+            background-color: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="topnav">
+            <div class="leftnav">
+                <a href="index.html">Home</a>
+                <a href="dis.html">Disasters</a>
+                <a href="charity.html">Charity</a>
+                <a href="about.html">About</a>
+                <a href="contacts.html">Emergency Services</a>
+            </div>
+            <div class="rightnav">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Disaster Dashboard</h1>
+
+        <!-- Disaster Sections -->
+        <div class="disaster-sections">
+            <!-- Flood Section -->
+            <div class="disaster-section">
+                <video controls autoplay muted>
+                    <source src="flood.mp4" type="video/mp4">
+                </video>
+                <h3>Flood</h3>
+                <ul>
+                    <li><b>Loss of Life and Displacement:</b> Floods can cause fatalities through drowning, landslides, and building collapses...</li>
+                    <li><b>Damage to Property and Infrastructure:</b> Homes, businesses, and public infrastructure like roads, bridges, and power grids are susceptible to damage...</li>
+                    <li><b>Spread of Waterborne Diseases:</b> Floods contaminate water sources with sewage and debris...</li>
+                </ul>
+                <h2>Dos:</h2>
+                <p>
+                 Listen to local radio, TV, or online sources for flood warnings and evacuation orders.
+                 Pay close attention to official alerts from authorities.
+             Move to Higher Ground:
+                 If a flood is imminent or occurring, immediately move to higher ground.
+                If you have time, move valuable items to upper floors.
+                 Turn off gas and electricity at the main switches.
+                 If possible, raise furniture and appliances.
+                 Prepare an Emergency Kit: Include food, water, medications, a first-aid kit, and a flashlight.
+                 Keep important documents in a waterproof container.
+                 Be Aware of Flash Flood Areas.
+                 Drink safe water and eat safe food.</p>
+                <h2>Don'ts:</h2>
+                 <p> Don't Walk or Drive Through Floodwaters, water can be electrically charged.
+                   Don't Ignore Evacuation Orders, evacuation orders are issued for your safety.
+                   Don't drink or use water that has been flood water until it has been declared safe.
+                   Don't spread rumors.
+                   Don't allow children to play in or near flood waters.<p>
+               <h3>By following these guidelines, you can significantly improve your chances of staying safe during a flood.</h3>
+            </div>
+
+            <!-- Cyclone Section -->
+            <div class="disaster-section">
+                <video controls autoplay muted>
+                    <source src="cyclone.mp4" type="video/mp4">
+                </video>
+                <h3>Cyclone</h3>
+                <ul>
+                    <li><b>Destruction of Homes and Infrastructure:</b> Cyclones bring powerful winds and torrential rains...</li>
+                    <li><b>Severe Flooding:</b> Storm surges and intense rainfall cause rivers to overflow...</li>
+                    <li><b>Agricultural Losses:</b> Farmlands are submerged under floodwaters...</li>
+                </ul>
+                <h2>Dos:</h2>
+                <p> Continuously monitor official weather forecasts and warnings from reliable sources like meteorological departments.
+                     Listen to radio and television broadcasts for updates.
+                   Prepare an Emergency Kit: Include essential supplies like food, water, a first-aid kit, a flashlight, batteries, and a battery-powered radio.
+                     Keep important documents in a waterproof container.
+                     Reinforce doors and windows.
+                     Move valuable items to higher ground.
+                     Trim trees and branches that could cause damage.
+                     Secure loose outdoor items that could become dangerous projectiles.
+                   Evacuate When Advised: If evacuation orders are issued, follow them immediately.
+                     Move to designated shelters or higher ground.
+                   During the Cyclone: Remain in a safe, interior room away from windows.
+                     If possible, take shelter in a basement or reinforced structure.
+                   After the Cyclone:
+                     Be cautious of downed power lines and debris.
+                     Only return home after authorities declare it safe.
+                     Drink safe water and eat safe foods.
+                 </p>
+                 <h2>Don'ts:</h2>
+                 <p> Don't Ignore Warnings.
+                     Don't Go Outside During the Cyclone.
+                     Don't Touch Downed Power Lines, they can be extremely dangerous.
+                     Don't Wade Through Floodwaters. .
+                     Don't Spread Rumors.
+                     Don't use electrical devices that have been submerged in water.</p>p>
+                 <h3>By adhering to these dos and don'ts, you can significantly enhance your safety during a cyclone.</h3>
+            </div>
+
+            <!-- Earthquake Section -->
+            <div class="disaster-section">
+                <video controls autoplay muted>
+                    <source src="earthquake.mp4" type="video/mp4">
+                </video>
+                <h3>Earthquake</h3>
+                <ul>
+                    <li><b>Loss of Life and Injuries:</b> Earthquakes can cause buildings and other structures to collapse...</li>
+                    <li><b>Destruction of Infrastructure:</b> Critical infrastructure like buildings, bridges, roads, dams...</li>
+                    <li><b>Damage to Property:</b> Homes, businesses, and personal belongings can be damaged...</li>
+                </ul>
+                <h2>Dos:</h2>
+                <p>   • If indoors:
+                     Immediately drop to your hands and knees.
+                    Take cover under a sturdy table or desk.
+                    Hold on to your shelter until the shaking stops.
+                  • If no shelter is available:
+                      Protect your head and neck with your arms.
+                     Crouch in an inside corner of the building.
+                    If outdoors: 
+                Move to an open area away     from buildings, trees, and power lines.
+                   Stay low to the ground.
+                 • If in a vehicle:
+                 Pull over to a safe location and stop.
+                 Stay inside the vehicle until the shaking stops.
+                 • After the shaking stops:
+                 Be prepared for aftershocks.
+                 Check yourself and others for injuries.
+                   Listen to official news and emergency broadcasts.
+                 If trapped, try to signal for help. Tapping on pipes or walls is better than shouting.
+                
+                 </p>
+                 <h2>Dont's:</h2>
+                 <p>Don't run outside during the shaking.
+                    Don't stand in doorways, Modern doorways are not necessarily strong and may not protect you from falling objects.
+                    Don't use elevators, Elevators can become trapped or malfunction during an earthquake.
+                    Don't panic, staying calm can help you make rational decisions.
+                    Don't light matches or candle.
+                    Don't re-enter damaged buildings, until they have been declared safe by professionals.
+                     Don't spread rumors.
+                       Only trust information from offical sources.</p>
+                 <h3>By remembering these points, you can significantly improve your safety during an earthquake.</h3>
+            </div>
+
+            <!-- Tsunami Section -->
+            <div class="disaster-section">
+                <video controls autoplay muted>
+                    <source src="tsunami.mp4" type="video/mp4">
+                </video>
+                <h3>Tsunami</h3>
+                <ul>
+                    <li><b>Massive Destruction:</b> Tsunamis cause widespread destruction to coastal areas...</li>
+                    <li><b>Loss of Life:</b> The sudden and powerful waves can lead to significant loss of life...</li>
+                    <li><b>Environmental Impact:</b> Tsunamis can destroy ecosystems and contaminate freshwater sources...</li>
+                </ul>
+                <h2>Dos:</h2>
+                <p>Recognize Natural Warning Signs.
+                     Move to Higher Ground Immediately.
+                    Listen to radio, television, and official sources for updates.
+                       Pay attention to tsunami warnings and evacuation orders
+                     Be Aware of Multiple Waves, Tsunamis often consist of multiple waves, with the first wave not necessarily being the largest.
+                       Stay in safe areas until authorities declare it safe to return.
+                   </p>
+                   <h2>Don'ts:</h2>
+                   <p>Don't Go to the Shore to Watch.
+                     Don't Ignore Natural Warnings, If you see or feel any warning signs, take them seriously.
+                     Don't Delay Evacuation.
+                     Don't Return to the Coast Too Soon, Wait for official clearance.
+                     Don't Assume Small Waves Are Safe, Tsunamis can produce many waves, and later waves can be much larger.</p>
+                  <h3> By understanding and following these guidelines, you can significantly increase your chances of survival during a tsunami.</h3>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Report a Disaster</h2>
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="disaster-type">Type of Disaster:</label>
+                <select id="disaster-type" name="disaster-type" required>
+                    <option value="flood">Flood</option>
+                    <option value="cyclone">Cyclone</option>
+                    <option value="earthquake">Earthquake</option>
+                    <option value="tsunami">Tsunami</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter the location" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Describe the situation..." required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Disaster Dashboard -->
+        <section id="disaster-dashboard">
+            <h2>Disaster Dashboard (Past 10 Years)</h2>
+            <div class="dashboard-container">
+                <canvas id="disasterChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+    </div>
+
+    
+    <script>
+        const disasterData = {
+            earthquakes: 120,
+            floods: 85,
+            cyclones: 45,
+            tsunamis: 10
+        };
+
+        function renderDisasterChart(data) {
+            const ctx = document.getElementById('disasterChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Earthquakes', 'Floods', 'Cyclones', 'Tsunamis'],
+                    datasets: [{
+                        label: 'Number of Disasters',
+                        data: [data.earthquakes, data.floods, data.cyclones, data.tsunamis],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        window.onload = () => {
+            renderDisasterChart(disasterData);
+        };
+    </script>
+    <footer>
+        <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

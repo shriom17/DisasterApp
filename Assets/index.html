@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+  
+    <title>DisasterApp</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="topnav">
+        <div class="leftnav">
+            <a href="index.html">Home</a>
+            <a href="dis.html">Disasters</a>
+            <a href="charity.html">Charity</a>
+            <a href="about.html">About</a>
+            <a href="contacts.html">Emergency Services</a>
+        </div>
+        <div class="rightnav">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+    <center>
+        <h2>Save From Disasters</h2>
+
+        <!-- Weather Section -->
+        <section id="weather" style="margin: 40px 0;">
+            <h2>Live Weather Updates</h2>
+            <div id="weather-info">
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <script>
+            const apiKey = 'e4419fc143676569ab125c869d096aad'; // OpenWeatherMap API key
+
+            async function fetchWeather(lat, lon) {
+                const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+                try {
+                    const response = await fetch(weatherUrl);
+                    const data = await response.json();
+
+                    if (data.cod === 200) {
+
+                        const weatherCondition = data.weather[0].main.toLowerCase();
+                        const weatherEmojis = {
+                            clear: '☀️', // Sunny
+                            clouds: '☁️', // Cloudy
+                            rain: '🌧️', // Rainy
+                            drizzle: '🌦️', // Drizzle
+                            thunderstorm: '⛈️', // Thunderstorm
+                            snow: '❄️', // Snow
+                            mist: '🌫️', // Mist/Fog
+                            haze: '🌫️', // Haze
+                            smoke: '🌫️', // Smoke
+                            dust: '🌫️', // Dust
+                            fog: '🌫️', // Fog
+                            sand: '🌫️', // Sandstorm
+                            ash: '🌋', // Volcanic Ash
+                            squall: '💨', // Squall
+                            tornado: '🌪️' // Tornado
+                        };
+
+                        const weatherEmoji = weatherEmojis[weatherCondition] || '❓'; 
+                        const weatherInfo = `
+                            <p><strong>City:</strong> ${data.name}</p>
+                            <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
+                            <p><strong>Weather:</strong> ${weatherEmoji} ${data.weather[0].description}</p>
+                            <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+                            <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+                        `;
+                        document.getElementById('weather-info').innerHTML = weatherInfo;
+
+                        // Alert based on weather condition
+                        if (weatherCondition === 'clear') {
+                            alert('The weather is sunny! Enjoy your day!');
+                        } else if (weatherCondition === 'thunderstorm' || weatherCondition === 'tornado' || weatherCondition === 'squall') {
+                            alert('Warning: Severe weather conditions detected! Stay safe and take precautions.');
+                        } else if (weatherCondition === 'rain' || weatherCondition === 'drizzle') {
+                            alert('It is raining outside. Don’t forget your umbrella!');
+                        }
+                    } else {
+                        document.getElementById('weather-info').innerHTML = `<p>Error: ${data.message}</p>`;
+                    }
+                } catch (error) {
+                    document.getElementById('weather-info').innerHTML = `<p>Error fetching weather data.</p>`;
+                    console.error(error);
+                }
+            }
+
+            //Live Location
+            function getUserLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            fetchWeather(lat, lon); // Fetch weather using user's location
+                        },
+                        (error) => {
+                            document.getElementById('weather-info').innerHTML = `<p>Error: Unable to fetch location. Please allow location access.</p>`;
+                            console.error(error);
+                        }
+                    );
+                } else {
+                    document.getElementById('weather-info').innerHTML = `<p>Error: Geolocation is not supported by your browser.</p>`;
+                }
+            }
+
+            getUserLocation();
+        </script>
+
+        <h3>Here, we help you stay safe from any disasters</h3>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="img/cyclone.png" alt="Cyclone">
+                <img src="img/earthquake.jpg" alt="Earthquake">
+                <img src="img/tsunami.jpg" alt="Tsunami">
+                <img src="img/flood.jpg" alt="Flood">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <form action="signup.php" method="post">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </center>
+    <footer>
+        <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
