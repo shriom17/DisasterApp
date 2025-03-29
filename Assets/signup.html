@@ -1,19 +1,38 @@
-<link rel="stylesheet" href="style.css">
-<form action="signup.php" method="post">
-    <h2>Sign Up</h2>
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your CSS file here -->
+</head>
+<body>
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-    </div>
-    <div class="form-group">
-        <button type="submit">Sign Up</button>
-    </div>
-</form>
+
+    <script>
+        // JavaScript for redirecting to the home page after sign-up
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Sign-up successful!'); // Optional success message
+            window.location.href = 'index.html'; // Redirect to the homepage
+        });
+    </script>
+</body>
+</html>

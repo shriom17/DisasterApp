@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.22.0",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase": "^11.5.0",
+    "node-fetch": "^3.3.2"
+  }
+}
