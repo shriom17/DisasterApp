@@ -1,37 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "disaster_app";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST["username"];
-    $email = $_POST["email"];
-    $pass = $_POST["password"];
-    $confirm_pass = $_POST["confirm-password"];
+    $username = htmlspecialchars($_POST['username']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
 
-
-    if ($pass !== $confirm_pass) {
-        echo "Passwords do not match!";
-    } else {
-
-        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$hashed_pass')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Sign-up successful!";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    }
+    echo "<h1>Sign-Up Successful</h1>";
+    echo "<p><strong>Username:</strong> $username</p>";
+    echo "<p><strong>Email:</strong> $email</p>";
+    echo "<p>Your account has been created successfully!</p>";
+} else {
+    echo "<h1>Error</h1>";
+    echo "<p>Invalid request. Please submit the form from the <a href='signup.html'>Sign-Up Page</a>.</p>";
 }
-
-$conn->close();

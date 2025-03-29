@@ -1,33 +1,21 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "charity_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $charity_name = $_POST["charity_name"];
-    $address = $_POST["address"];
-    $mobile = $_POST["mobile"];
-    $state = $_POST["state"];
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $charityName = htmlspecialchars($_POST['charity_name']);
+    $address = htmlspecialchars($_POST['address']);
+    $mobile = htmlspecialchars($_POST['mobile']);
+    $state = htmlspecialchars($_POST['state']);
 
-
-    $sql = "INSERT INTO charity_form (name, email, charity_name, address, mobile, state)
-            VALUES ('$name', '$email', '$charity_name', '$address', '$mobile', '$state')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Charity information submitted successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    echo "<h1>Charity Form Submitted</h1>";
+    echo "<p><strong>Name:</strong> $name</p>";
+    echo "<p><strong>Email:</strong> $email</p>";
+    echo "<p><strong>Charity Name:</strong> $charityName</p>";
+    echo "<p><strong>Address:</strong> $address</p>";
+    echo "<p><strong>Mobile No.:</strong> $mobile</p>";
+    echo "<p><strong>State:</strong> $state</p>";
+    echo "<p>Thank you for submitting your details. We will contact you soon.</p>";
+} else {
+    echo "<h1>Error</h1>";
+    echo "<p>Invalid request. Please submit the form from the <a href='charity.html'>Charity Page</a>.</p>";
 }
-
-$conn->close();

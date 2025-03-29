@@ -261,10 +261,10 @@
         
         <div class="form-section">
             <h2>Report a Disaster</h2>
-            <form>
+            <form action="dis.php" method="post">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
+        
                 <label for="disaster-type">Type of Disaster:</label>
                 <select id="disaster-type" name="disaster-type" required>
                     <option value="flood">Flood</option>
@@ -272,13 +272,13 @@
                     <option value="earthquake">Earthquake</option>
                     <option value="tsunami">Tsunami</option>
                 </select>
-
+        
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" placeholder="Enter the location" required>
-
+        
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" rows="4" placeholder="Describe the situation..." required></textarea>
-
+        
                 <button type="submit">Submit</button>
             </form>
         </div>
