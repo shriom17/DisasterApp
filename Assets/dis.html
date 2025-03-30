@@ -181,7 +181,7 @@
                      Don't Touch Downed Power Lines, they can be extremely dangerous.
                      Don't Wade Through Floodwaters. .
                      Don't Spread Rumors.
-                     Don't use electrical devices that have been submerged in water.</p>p>
+                     Don't use electrical devices that have been submerged in water.</p>
                  <h3>By adhering to these dos and don'ts, you can significantly enhance your safety during a cyclone.</h3>
             </div>
 
@@ -346,7 +346,36 @@
             renderDisasterChart(disasterData);
         };
     </script>
-    
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Radar Section</title>
+</head>
+
+<section id="cyclone-radar" style="margin: 40px 0;">
+    <h2>Cyclone Radar Map</h2>
+    <p>Click the button below to view the cyclone radar map:</p>
+    <button onclick="openRadarMap()" style="font-size: 18px; padding: 10px 20px; background-color: blue; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Open Cyclone Radar Map
+    </button>
+</section>
+
+<script>
+    function openRadarMap() {
+        window.open('https://zoom.earth/', '_blank');
+    }
+</script>
+  <script>
+
+const fetchCycloneData = async () => {
+    const response = await fetch('https://city.imd.gov.in/api/cityweather.php?id=42182'); // Replace with actual API endpoint
+    const data = await response.json();
+    console.log(data);
+  };
+  
+  fetchCycloneData();
+  </script>
+
     <footer>
         <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
     </footer>
