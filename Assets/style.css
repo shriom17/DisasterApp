@@ -288,3 +288,76 @@ p {
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
+
+/* Styling for the Recent Disasters Section */
+#recent-disasters {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9a1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+}
+
+.disaster-update {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.disaster-update h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.disaster-update h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.disaster-update p {
+    font-size: 14px;
+    color: #666666;
+    margin: 5px 0;
+}
+
+.disaster-update a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.disaster-update a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #recent-disasters {
+        padding: 15px;
+    }
+
+    .disaster-update {
+        padding: 10px;
+    }
+
+    .disaster-update h3 {
+        font-size: 16px;
+    }
+
+    .disaster-update p {
+        font-size: 13px;
+    }
+
+    .disaster-update a {
+        font-size: 13px;
+    }
+}

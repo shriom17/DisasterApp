@@ -154,6 +154,51 @@
             </ul>
         </div>
         <a href ="dis.html" class="btn">Learn More About Disasters</a>
+        <section id="recent-disasters" style="margin: 40px 0;">
+            <h2>Recent Disasters</h2>
+            <div id="disaster-updates">
+                <p>Loading recent disaster updates...</p>
+            </div>
+        </section>
+
+        <script>
+            async function fetchRecentEarthquakes() {
+                const apiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=5';
+                try {
+                    const response = await fetch(apiUrl);
+        
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+        
+                    const data = await response.json();
+        
+                    if (data && data.features && data.features.length > 0) {
+                        const earthquakes = data.features.map(earthquake => {
+                            const properties = earthquake.properties;
+                            return `
+                                <div class="disaster-update">
+                                    <h3>${properties.place}</h3>
+                                    <p><strong>Magnitude:</strong> ${properties.mag}</p>
+                                    <p><strong>Date:</strong> ${new Date(properties.time).toLocaleString()}</p>
+                                    <a href="${properties.url}" target="_blank">More Info</a>
+                                </div>
+                            `;
+                        }).join('');
+        
+                        document.getElementById('disaster-updates').innerHTML = earthquakes;
+                    } else {
+                        document.getElementById('disaster-updates').innerHTML = '<p>No recent earthquakes found.</p>';
+                    }
+                } catch (error) {
+                    document.getElementById('disaster-updates').innerHTML = '<p>Error fetching earthquake updates.</p>';
+                    console.error('Error:', error);
+                }
+            }
+        
+            fetchRecentEarthquakes();
+        </script>
+        
     </center>
     <footer>
         <p>&copy; 2025 DisasterApp. All Rights Reserved.</p>
