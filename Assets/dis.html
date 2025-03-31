@@ -89,6 +89,16 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        @media (max-width: 400px) {
+            .disaster-sections {
+                flex-direction: column; /* Stack sections vertically */
+                gap: 20px; /* Reduce the gap between sections */
+            }
+        
+            .disaster-section {
+                width: 100%; /* Make each section take full width */
+            }
+        }
     </style>
 </head>
 <body>

@@ -340,7 +340,7 @@ p {
     text-decoration: underline;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     #recent-disasters {
         padding: 15px;
     }
