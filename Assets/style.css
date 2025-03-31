@@ -362,23 +362,5 @@ p {
     }
 }
 
-@media (max-width: 768px) {
 
-    nav.topnav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
 
-    nav.topnav .leftnav, nav.topnav .rightnav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 10px 0;
-    }
-
-    nav.topnav a {
-        margin: 5px 0;
-        font-size: 16px;
-    }
-
-}
