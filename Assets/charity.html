@@ -9,7 +9,10 @@
 </head>
 <body>
     <nav class="topnav">
-        <div class="leftnav">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="dis.html">Disasters</a>
             <a href="charity.html">Charity</a>
@@ -20,8 +23,13 @@
             <a href="login.html">Login</a>
             <a href="signup.html">Sign Up</a>
         </div>
+        <script>
+            function toggleMenu() {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.toggle('show');
+            }
+        </script>
     </nav>
-    
     <h1>Do You Want To Include Yourself In Charity?</h1>
     <form action="charity.php" method="post">
         <label for="name">Name:</label>

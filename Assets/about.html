@@ -51,18 +51,27 @@
 <body>
   <header>
     <nav class="topnav">
-        <div class="leftnav">
-            <a href="index.html">Home</a>
-            <a href="dis.html">Disasters</a>
-            <a href="charity.html">Charity</a>
-            <a href="about.html">About</a>
-            <a href="contacts.html">Emergency Services</a>
-        </div>
-        <div class="rightnav">
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign Up</a>
-        </div>
-    </nav>
+      <div class="menu-icon" onclick="toggleMenu()">
+          &#9776;
+      </div>
+      <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="dis.html">Disasters</a>
+          <a href="charity.html">Charity</a>
+          <a href="about.html">About</a>
+          <a href="contacts.html">Emergency Services</a>
+      </div>
+      <div class="rightnav">
+          <a href="login.html">Login</a>
+          <a href="signup.html">Sign Up</a>
+      </div>
+      <script>
+          function toggleMenu() {
+              const navLinks = document.querySelector('.nav-links');
+              navLinks.classList.toggle('show');
+          }
+      </script>
+  </nav>
   </header>
 
   <div class="container">
